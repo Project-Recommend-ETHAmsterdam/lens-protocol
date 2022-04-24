@@ -20,7 +20,7 @@ task('create-venues', 'publishes a post').setAction(async ({}, hre) => {
   let inputStruct: PostDataStruct = {
     profileId: 1,
     contentURI:
-      'https://ipfs.fleek.co/ipfs/plantghostplantghostplantghostplantghostplantghostplantghos',
+      'https://gateway.pinata.cloud/ipfs/QmZwu7o5ovrqBouMieFVmoTKWDhsiiyj9jxVo5AzaqGefb/1.json',
     collectModule: emptyCollectModuleAddr,
     collectModuleInitData: _collectModuleInitData,
     referenceModule: ZERO_ADDRESS,
@@ -34,7 +34,7 @@ task('create-venues', 'publishes a post').setAction(async ({}, hre) => {
   inputStruct = {
     profileId: 1,
     contentURI:
-      'https://ipfs.fleek.co/ipfs/plantghostplantghostplantghostplantghostplantghostplantghos',
+      'https://gateway.pinata.cloud/ipfs/QmZwu7o5ovrqBouMieFVmoTKWDhsiiyj9jxVo5AzaqGefb/2.json',
     collectModule: emptyCollectModuleAddr,
     collectModuleInitData: _collectModuleInitData,
     referenceModule: ZERO_ADDRESS,
@@ -48,7 +48,7 @@ task('create-venues', 'publishes a post').setAction(async ({}, hre) => {
   inputStruct = {
     profileId: 1,
     contentURI:
-      'https://ipfs.fleek.co/ipfs/plantghostplantghostplantghostplantghostplantghostplantghos',
+      'https://gateway.pinata.cloud/ipfs/QmZwu7o5ovrqBouMieFVmoTKWDhsiiyj9jxVo5AzaqGefb/3.json',
     collectModule: emptyCollectModuleAddr,
     collectModuleInitData: _collectModuleInitData,
     referenceModule: ZERO_ADDRESS,
@@ -62,7 +62,7 @@ task('create-venues', 'publishes a post').setAction(async ({}, hre) => {
   inputStruct = {
     profileId: 1,
     contentURI:
-      'https://ipfs.fleek.co/ipfs/plantghostplantghostplantghostplantghostplantghostplantghos',
+      'https://gateway.pinata.cloud/ipfs/QmZwu7o5ovrqBouMieFVmoTKWDhsiiyj9jxVo5AzaqGefb/4.json',
     collectModule: emptyCollectModuleAddr,
     collectModuleInitData: _collectModuleInitData,
     referenceModule: ZERO_ADDRESS,
