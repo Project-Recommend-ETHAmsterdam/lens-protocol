@@ -200,6 +200,26 @@ library DataTypes {
         bytes referenceModuleInitData;
     }
 
+
+    /**
+     * @notice A struct containing the parameters required for the `post()` function.
+     *
+     * @param currency The currency associated with this profile.
+     * @param amount The post curation cost associated with this profile.
+     * @param profileId The token ID of the profile to publish to.
+     * @param contentURI The URI to set for this new publication.
+     * @param collectModule The collect module to set for this new publication.
+     * @param collectModuleInitData The data to pass to the collect module's initialization.
+     * @param referenceModule The reference module to set for the given publication, must be whitelisted.
+     * @param referenceModuleInitData The data to be passed to the reference module for initialization.
+     */
+    struct CuratedPostData {
+        address currency;
+        uint256 amount;
+        PostData postData;
+    }
+
+
     /**
      * @notice A struct containing the parameters required for the `postWithSig()` function. Parameters are the same as
      * the regular `post()` function, with an added EIP712Signature.

@@ -7,6 +7,7 @@ import {
   ApprovalFollowModule__factory,
   CollectNFT__factory,
   Currency__factory,
+  CuratorFeeFollowModule__factory,
   FreeCollectModule__factory,
   FeeCollectModule__factory,
   FeeFollowModule__factory,
@@ -182,6 +183,13 @@ task('full-deploy', 'deploys the entire Lens Protocol').setAction(async ({}, hre
       nonce: deployerNonce++,
     })
   );
+
+  console.log('\n\t-- Deploying curatorFeeFollowModule --');
+  const curatorFeeFollowModule = await deployContract(
+    new CuratorFeeFollowModule__factory(deployer).deploy(lensHub.address, moduleGlobals.address, {
+      nonce: deployerNonce++,
+    })
+  );
   // --- COMMENTED OUT AS THIS IS NOT A LAUNCH MODULE ---
   // console.log('\n\t-- Deploying approvalFollowModule --');
   // const approvalFollowModule = await deployContract(
@@ -273,6 +281,7 @@ task('full-deploy', 'deploys the entire Lens Protocol').setAction(async ({}, hre
     'lens periphery': lensPeriphery.address,
     'module globals': moduleGlobals.address,
     'fee collect module': feeCollectModule.address,
+    'curator follow module': curatorFeeFollowModule.address,
     'limited fee collect module': limitedFeeCollectModule.address,
     'timed fee collect module': timedFeeCollectModule.address,
     'limited timed fee collect module': limitedTimedFeeCollectModule.address,

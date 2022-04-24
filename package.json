@@ -23,7 +23,8 @@
     "compile": "SKIP_LOAD=true hardhat clean && SKIP_LOAD=true hardhat compile",
     "console:fork": "MAINNET_FORK=true hardhat console",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "boot": "npx hardhat full-deploy --network localhost && npx hardhat unpause --network localhost && npx hardhat create-domain-profile --network localhost && npx hardhat create-venues --network localhost && npx hardhat create-profile --network localhost && npx hardhat follow --network localhost && npx hardhat collect --network localhost"
   },
   "repository": {
     "type": "git",

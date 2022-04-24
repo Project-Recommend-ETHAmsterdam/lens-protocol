@@ -11,6 +11,8 @@ import {IFollowModule} from '../interfaces/IFollowModule.sol';
 import {ICollectModule} from '../interfaces/ICollectModule.sol';
 import {IReferenceModule} from '../interfaces/IReferenceModule.sol';
 
+import "hardhat/console.sol";
+
 /**
  * @title PublishingLogic
  * @author Lens Protocol
@@ -120,6 +122,7 @@ library PublishingLogic {
      * @param _collectModuleWhitelisted The storage reference to the mapping of whitelist status by collect module address.
      * @param _referenceModuleWhitelisted The storage reference to the mapping of whitelist status by reference module address.
      */
+
     function createPost(
         uint256 profileId,
         string memory contentURI,
@@ -135,6 +138,7 @@ library PublishingLogic {
     ) external {
         _pubByIdByProfile[profileId][pubId].contentURI = contentURI;
 
+        console.log('before initPubCollectModule');
         // Collect module initialization
         bytes memory collectModuleReturnData = _initPubCollectModule(
             profileId,
@@ -145,6 +149,7 @@ library PublishingLogic {
             _collectModuleWhitelisted
         );
 
+        console.log('before initPubReferenceModule');
         // Reference module initialization
         bytes memory referenceModuleReturnData = _initPubReferenceModule(
             profileId,
@@ -307,6 +312,7 @@ library PublishingLogic {
     ) private returns (bytes memory) {
         if (!_collectModuleWhitelisted[collectModule]) revert Errors.CollectModuleNotWhitelisted();
         _pubByIdByProfile[profileId][pubId].collectModule = collectModule;
+        console.logBytes(collectModuleInitData);
         return
             ICollectModule(collectModule).initializePublicationCollectModule(
                 profileId,

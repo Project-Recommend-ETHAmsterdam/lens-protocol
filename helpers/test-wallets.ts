@@ -33,4 +33,26 @@ export const accounts = [
     secretKey: '0xa2e0097c961c67ec197b6865d7ecea6caffc68ebeb00e6050368c8f67fc9c588',
     balance,
   },
+  {
+    secretKey: '0xb2fd4d29c1390b71b8795ae81196bfd60293adf99f9d32a0aff06288fcdac55f',
+    balance,
+  },
+  {
+    secretKey: '0x83c6d2cc5ddcf9711a6d59b417dc20eb48afd58d45290099e5987e3d768f328f',
+    balance,
+  },
+  {
+    secretKey: '0xdf02719c4df8b9b8ac7f551fcb5d9ef48fa27eef7a66453879f4d8fdc6e78fb1',
+    balance,
+  },
+  {
+    secretKey: '0xf2f48ee19680706196e2e339e5da3491186e0c4c5030670656b0e0164837257d',
+    balance,
+  },
+  {
+    secretKey: '0xefb595a0178eb79a8df953f87c5148402a224cdf725e88c0146727c6aceadccd',
+    balance,
+  },
 ];
+
+

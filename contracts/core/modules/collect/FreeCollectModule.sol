@@ -6,6 +6,8 @@ import {ICollectModule} from '../../../interfaces/ICollectModule.sol';
 import {ModuleBase} from '../ModuleBase.sol';
 import {FollowValidationModuleBase} from '../FollowValidationModuleBase.sol';
 
+import "hardhat/console.sol";
+
 /**
  * @title FreeCollectModule
  * @author Lens Protocol
@@ -27,7 +29,9 @@ contract FreeCollectModule is FollowValidationModuleBase, ICollectModule {
         uint256 pubId,
         bytes calldata data
     ) external override onlyHub returns (bytes memory) {
+        console.log('in initializePublication');
         bool followerOnly = abi.decode(data, (bool));
+        console.log('after abi decode');
         if (followerOnly) _followerOnlyByPublicationByProfile[profileId][pubId] = true;
         return data;
     }
